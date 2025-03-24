@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
+  <title>Conference ticket generator</title>
+
+</head>
+<body>
+
+  <!-- Form starts -->
+
+  <header>
+    <img class="logo" src="./assets/images/logo-full.svg" alt="logo image">
+  </header>
+
+  <main>
+    <div class="heading">
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+      <p>Secure your spot at next year's biggest coding conference.</p>
+    </div>
+       
+    <div class="form-container">
+      <form action="./ticket.html">
+        
+        <p>Upload Avater</p>
+        <div class="upload">
+
+          <label for="image-upload" id="drop-area">
+            <input type="file" id="image-upload" name="image-upload" accept="image/*" required hidden>
+            <div id="image-view">
+              <img src="./assets/images/icon-upload.svg" alt="upload icon">
+              <p>Drag and drop or click to upload</p>
+            </div>
+          </label>
+          
+        </div>
+
+        Upload your photo (JPG or PNG, max size: 500KB).<br>
+        <label for="fullname">Full Name</label><br>
+        <input type="text" id="fullname" name="fullname" required><br>
+        <label for="mail">Email Address</label><br>
+        <input type="email" id="mail" name="email" placeholder="example@email.com" required><br>
+        <label for="GitHub">GitHub Username</label><br>
+        <input type="text" id="GitHub" name="GitHub" placeholder="@yourusername" required><br>
+        <input type="submit" id="submit" value="Generate My Ticket">
+      </form>
+      
+    </div>
+  </main>
+  
+  <!-- Footer 
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+
+  <script charset="UTF-8" src="./index.js" ></script>
+</body>
+</html>
