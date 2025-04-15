@@ -7,28 +7,44 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
     <link rel="stylesheet" href="./styles.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
     <title>Conference ticket generator</title>
     
 </head>
 <body>
 
-    <main >
+    <header>
+        <img class="logo" src="./assets/images/logo-full.svg" alt="logo image">
+    </header>
 
-        <div class="ticket">
-            <h1>Congrats, <!-- Full Name -->! Your ticket is ready.</h1>
-            <p>We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.</p>
+    <main class="ticket-header">
+
+        <h1>Congrats, <!-- Full Name -->! Your ticket is ready.</h1>
+        <p>We've emailed your ticket to <!-- Email Address --> and will send updates in the run up to the event.</p>
         
-            Coding Conf
-            Jan 31, 2025 / Austin, TX
-        
-            <!-- Generated tickets ends --> 
-        </div>
+        <div class="ticket-info">
+            <img class="ticket" src="./assets/images/pattern-ticket.svg" alt="ticket image">
+            <div class="ticket-info-holder">
+                <div class="ticket-date">
+                    <img src="./assets/images/logo-mark.svg" alt="logo">
+                    <p>
+                        <span class="code-conf">Coding Conf</span><br/>
+                        <span class="code-date">Jan 31, 2025 / Austin, TX</span>
+                    </p>
+                </div> <!-- ticket-date end -->
+
+                <div class="ticket-name">
+                    <img src="./assets/images/image-avatar.jpg" alt="jonathan headshot" class="headshot">
+                    <p>
+                        <span class="code-conf-name" id="conf-name">Jonathan Kristof</span>
+                        <span class="code-conf-email" id="conf-email">@jonathankristof</span>
+                    </p>
+
+                </div> <!-- ticket-info-name end -->
+            </div>  <!-- ticket-info-holder end --> 
+        </div> 
         
     </main>
-    
-    
+
+    <script src="./index.js" ></script>
 </body>
 </html>

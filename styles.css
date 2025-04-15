@@ -1,108 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
 :root {
-    --neutral0: hsl(0, 0%, 100%);
-    --neutral300: hsl(252, 6%, 83%);
-    --neutral500: hsl(245, 15%, 58%);
-    --neutral700: hsl(245, 19%, 35%);
-    --neutral900: hsl(248, 70%, 10%);
-    --orange500: hsl(7, 88%, 67%);
-    --orange700: hsl(7, 71%, 60%)
+    --clr--neutral300: hsl(252, 6%, 83%);
+    --clr--neutral500: hsl(245, 15%, 58%);
+    --clr--neutral700: hsl(245, 19%, 35%);
+    --clr--neutral900: hsl(248, 70%, 10%);
+    --clr-orange500: hsl(7, 88%, 67%);
+    --clr--orange700: hsl(7, 71%, 60%);
 }
 
 *,
 *::before,
 *::after {
-    padding: 0;
     margin: 0;
+    padding: 0;
     border: 0;
     box-sizing: border-box;
+
+}
+
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
 }
 
 body {
-    font-family: "Inconsolata", sans-serif;
+    background-image: 
+    url(./assets/images/pattern-squiggly-line-bottom.svg), url(./assets/images/pattern-squiggly-line-top.svg),
+    url(./assets/images/pattern-lines.svg), url(./assets/images/background-mobile.png);
+    background-size:
+        cover, cover,
+        none, contain ;
+    background-position:
+        left bottom,
+        right top,
+        center,
+        center ;
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
     min-height: 100vh;
-    background-color: var(--neutral900);
-    color: var(--neutral0);
-    margin: auto;
-    width: 70%;
-    text-align: center;
-}
-
-header {
-    padding: 1.5rem ;
-}
-
-.logo {
-    width: 10rem;
-    height: auto;
-}
-
-h1 {
-    margin-bottom: 1rem;
-}
-
-.upload {
-    width: 100%;
-    height: 6rem;
-    border: 0.15rem white dotted;
-    border-radius: 0.3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#drop-area {
-    width: 95%;
-    height: 90%;
-    background-color: blueviolet;
-    text-align: center;
-    border-radius: 0.2rem;
-}
-
-#image-view {
-    width: 100%;
-    height: 100%;
+    line-height: 1.5;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    padding: 1.5rem;
+    color: white;
+    font-family: "Inconsolata", system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+    margin: 1.5rem 0;
+}
+
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+:target {
+    scroll-margin-block: 5ex;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+main {
+    max-width: 30rem;
+}
+
+.heading > h1 {
+    text-align: center;
+}
+
+.heading > p {
+    text-align: center;
+    font-weight: 200;
 }
 
 .form-container {
+    margin-top: 3rem;
+}
+
+#image-view > img {
+    background-color: var(--clr--neutral700);
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+    margin: auto;
+} 
+
+.upload {
     display: flex;
-    text-align: left;
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem;
+    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='16' ry='16' stroke='white' stroke-width='2' stroke-dasharray='5%2c 10' stroke-dashoffset='0' stroke-linecap='round'/%3e%3c/svg%3e");
+    border-radius: 16px;
+    border-radius: 0.3rem;
+    background-color: var(--clr--neutral900);
+
+    &:hover {
+        background-color: var(--clr--neutral700);
+        cursor: pointer;
+    }
+}
+
+.upload-directions {
+    font-size: 0.75rem;
+    font-weight: 200;
 }
 
 input {
     width: 100%;
-    padding: 0.8rem;
-    border: 0.1rem white dotted;
-    border-radius: 0.4rem;
-    margin: 0.5rem;
-    background-color: var(--neutral300);
-    color: var(--neutral0);
+    color: white;
+    padding: 0.7rem;
+    margin-top: 0.2rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--clr--neutral500);
+    border-radius: 7px;
+    background-color: var(--clr--neutral900);
+
+    &:hover {
+        background-color: var(--clr--neutral700);
+        cursor: pointer;
+    }
+
+    &:focus {
+        background-color: var(--clr--neutral900);
+        outline: 0.1rem solid var(--clr--neutral500);
+        color: white;
+    }
 }
 
 #submit {
-    background-color: var(--orange700);
-    color: var(--neutral900);
-    font-family: "Inconsolata";
-    font-size: 1.2rem;
+    background-color: var(--clr--orange700);
+    border: none;
     font-weight: 800;
-    border: 0;    
+    color: var(--clr--neutral900);
+
+    &:hover {
+        cursor: pointer;
+        box-shadow: 0rem 0.1rem var(--clr-orange500);
+    }
+}
+
+::placeholder {
+    color: white;
+    font-weight: 100;
 }
 
 
+/* Ticket styling */
 
-/* Ticket styling start here*/
+.ticket-header > h1 {
+    text-align: center;
+}
 
-.ticket {
-    width: 80%;
-    height: 90vh;
-    margin: auto;
+.ticket-header > p {
+    text-align: center;
+}
+
+.ticket-info {
+    margin: 4rem auto;
+    max-width: 25rem;
+    position: relative;
+}
+
+/* .ticket {
+    background-image: url(./assets/images/pattern-ticket.svg);
+    background-clip: padding-box;
+} */
+
+.ticket-date {
+    width: 75%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+}
+
+.ticket-date > p {
+    margin: 0;
+    text-align: left;
+}
+
+.code-conf {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.code-date {
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+.ticket-name {
+    width: 75%;
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 1rem;
     align-items: center;
+}
+
+.ticket-name > img {
+    width: 3rem;
+    height: auto;
+    border-radius: 0.3rem;
+}
+
+.code-conf-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.code-conf-email {
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+@media (min-width: 35rem)  and (max-width: 61.9rem) {
+    
+    body {
+        background-image: 
+            url(./assets/images/pattern-squiggly-line-bottom.svg), url(./assets/images/pattern-squiggly-line-top.svg),
+            url(./assets/images/pattern-lines.svg), url(./assets/images/background-tablet.png);
+        background-size:
+            contain, contain,
+            none, contain ;
+        background-position:
+            left bottom,
+            right top,
+            center,
+            center ;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+    }
+
+    .ticket-date {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+    }
+
+    .ticket-name {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 2rem;
+    }
+}
+
+@media screen and (min-width: 62rem) {
+
+    body {
+        background-image: 
+            url(./assets/images/pattern-squiggly-line-bottom.svg), url(./assets/images/pattern-squiggly-line-top.svg),
+            url(./assets/images/pattern-lines.svg), url(./assets/images/pattern-circle.svg),
+            url(./assets/images/background-desktop.png);
+        background-size:
+            contain, contain,
+            none, none, contain;
+        background-position:
+            left bottom,
+            right top,
+            center,
+            bottom 30% right 25%,
+            center ;
+        background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    }
+
+    .ticket-date {
+        position: absolute;
+        top: 1.5rem;
+        left: 2rem;
+    }
+
+    .ticket-name {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 2rem;
+    }
+    
 }
