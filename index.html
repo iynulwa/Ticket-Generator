@@ -25,17 +25,15 @@
     </div>
        
     <div class="form-container">
-      <form action="./ticket.html">
+      <form action="./ticket.html" id="main-form">
         
         <p>Upload Avater</p>
         <div class="upload">
 
           <label for="image-upload" id="drop-area">
             <input type="file" id="image-upload" name="image-upload" accept="image/*" required hidden>
-            <div id="image-view">
-              <img src="./assets/images/icon-upload.svg" alt="upload icon">
-              <p>Drag and drop or click to upload</p>
-            </div>
+              <img src="./assets/images/icon-upload.svg" alt="upload icon" id="image-view">
+              <p id="upload-text">Drag and drop or click to upload</p>
           </label>
           
         </div> 
@@ -54,12 +52,6 @@
     </div>
   </main>
   
-  <!--
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
-
-  <script src="./index.js" ></script>
+<script src="index.js"></script>
 </body>
 </html>

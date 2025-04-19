@@ -1,51 +1,26 @@
-const dropArea = document.getElementById("drop-area");
+// variable for grabbing inputs
+
 const imageUpload = document.getElementById("image-upload");
-const imageView = document.getElementById("image-view");
+const fullName = document.getElementById("fullname");
+const mail = document.getElementById("mail");
+const gitHub = document.getElementById("GitHub");
 
-imageUpload.addEventListener("change", uploadImage);
+//storing form data
 
-function uploadImage() {
-     let imgLink = URL.createObjectURL(imageUpload.files[0])
-}
+let formData = {
+     imageData: imageUpload.value,
+     fullNameData: fullName.value,
+     mailData: mail.value,
+     gitHubData: gitHub.value
+};
+     
+const form = document.getElementById("main-form");
 
+form.addEventListener("submit", function(event) {
+     event.preventDefault(event);
+     console.log(formData);
+})
+     
 
-
-// document.addEventListener("DOMContentLoaded", () => {
-        
-
-// const form = document.querySelector("form");
-
-//   form.addEventListener("submit", saveData); 
-//   function saveData(event) {
-//     event.preventDefault(); 
-
-//     const fullname = document.getElementById("fullname"); 
-//     const email = document.getElementById("mail"); 
-//     const github = document.getElementById("GitHub");
-
-
-//     const fullNameValue = fullname.value.trim();
-//     const emailValue = email.value.trim();
-//     const githubValue = github.value.trim();
-
-//     const userData = {
-//       fullNameValue,
-//       emailValue,
-//       githubValue,
-//     };
-
-//     const queryString = new URLSearchParams(userData).toString();
-//     window.location.href = `./ticket.html?${queryString}`;
-// }
-
-// const params = new URLSearchParams(window.location.search);
-
-// const fullname = params.get("fullname") || "Guest";
-// const email = params.get("email") || "No email provided";
-// const github = params.get("github") || "Not provided";
-
-// document.getElementById("conf-name").textContent = fullname;
-// document.getElementById("conf-email").textContent = email;
-// })
 
 
